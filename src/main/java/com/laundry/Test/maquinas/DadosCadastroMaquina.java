@@ -9,8 +9,8 @@ public record DadosCadastroMaquina(
 		String nome,
 		@Enumerated
 		Estado estado,
-		@Enumerated
-		SiteCompra site,
+		
+		
 		
 		int quantidade
 		) {

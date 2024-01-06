@@ -1,8 +1,8 @@
 package com.laundry.Test.maquinas;
 
-public record DadosListagemMaquina(String nome) {
+public record DadosListagemMaquina(Long id, String nome, Estado estado) {
 
-	public DadosListagemMaquina(Maquinas maquina) {
-		this(maquina.getNome());
+	public DadosListagemMaquina(Maquina maquina) {
+		this(maquina.getId(), maquina.getNome(), maquina.getEstado());
 	}
 }
