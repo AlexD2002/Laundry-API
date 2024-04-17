@@ -10,8 +10,6 @@ public record DadosCadastroMaquina(
 		@Enumerated
 		Estado estado,
 		
-		
-		
 		int quantidade
 		) {
 

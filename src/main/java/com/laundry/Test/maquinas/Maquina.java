@@ -23,12 +23,13 @@ import lombok.Setter;
 @EqualsAndHashCode(of = "id")
 
 public class Maquina {
+	
 	public Maquina(DadosCadastroMaquina dados) {
 		this.nome = dados.nome();
 		this.quantidade = dados.quantidade();
 		this.estado = dados.estado();
+		this.active = true;		
 		
-
 	}
 
 	@Id
@@ -38,17 +39,26 @@ public class Maquina {
 	private int quantidade;
 	@Enumerated(EnumType.STRING)
 	private Estado estado;
-	@Enumerated(EnumType.STRING)
+	private Boolean active;
 	
-
+	
+	
 	public void atualizarInformacoes(@Valid DadosAtualizarMaquina dados) {
 		if (dados.nome() != null) {
-
 			this.nome = dados.nome();
 		}
 
 		if (dados.estado() != null) {
 			this.estado = dados.estado();
 		}
+		
+	}
+	public void inativar() {
+		this.active = false;
+	}
+	public void reativar() {
+		this.active = true;
+	}
+	public void excluir() {
 	}
 }
