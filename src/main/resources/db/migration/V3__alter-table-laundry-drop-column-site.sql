@@ -1,0 +1,1 @@
+ALTER TABLE laundry DROP COLUMN site;
