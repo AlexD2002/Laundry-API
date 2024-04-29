@@ -43,6 +43,7 @@ public class LaundryController {
 
 	@GetMapping
 	public ResponseEntity<List<DadosListagemMaquina>> listar() {
+		
 		var lista = repository.findAllByActiveTrue().stream().map(DadosListagemMaquina::new).toList();
 		
 		return ResponseEntity.ok(lista);
